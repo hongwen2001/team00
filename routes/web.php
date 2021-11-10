@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    /*
+     * 簡單測試一下修改檔案*/
+    return "Hello World";
 });
