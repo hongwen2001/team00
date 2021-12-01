@@ -48,6 +48,8 @@ class TeamsController extends Controller
     public function show($id)
     {
         //
+        return "顯示單一筆球隊的紀錄(id = " . $id . ")";
+
     }
 
     /**
