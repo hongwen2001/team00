@@ -53,6 +53,8 @@ class PlayersController extends Controller
     public function show($id)
     {
         //
+
+        //Player
         return "顯示單一筆球員的紀錄(id = " . $id . ")";
 
     }

@@ -10,26 +10,18 @@
         <th>編號</th>
         <th>姓名</th>
         <th>球隊編號</th>
-        <th>生日</th>
-        <th>到職日</th>
-        <th>位置</th>
-        <th>身高</th>
-        <th>體重</th>
-        <th>年資</th>
-        <th>國籍</th>
+        <th>操作</th>
     </tr>
     @foreach($players as $player)
         <tr>
             <td>{{ $player->id }}</td>
             <td>{{ $player->name }}</td>
             <td>{{ $player->tid }}</td>
-            <td>{{ $player->birthdate  }}</td>
-            <td>{{ $player->onboarddate }}</td>
-            <td>{{ $player->position }}</td>
-            <td>{{ $player->height }}</td>
-            <td>{{ $player->weight }}</td>
-            <td>{{ $player->year }}</td>
-            <td>{{ $player->nationality }}</td>
+            <td>
+                <a href="players/{{ $player->id }}">
+                    詳細
+                </a>
+            </td>
         </tr>
     @endforeach
 </table>

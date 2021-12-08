@@ -9,18 +9,17 @@
     <tr>
         <th>編號</th>
         <th>名稱</th>
-        <th>所屬分區</th>
-        <th>所在城市</th>
-        <th>主場</th>
+        <th>操作</th>
     </tr>
     @foreach($teams as $team)
         <tr>
             <td>{{ $team->id }}</td>
             <td>{{ $team->name }}</td>
-            <td>{{ $team->zone }}</td>
-            <td>{{ $team->city  }}</td>
-            <td>{{ $team->home }}</td>
-
+            <td>
+                <a href="teams/{{ $team->id }}">
+                    詳細
+                </a>
+            </td>
         </tr>
     @endforeach
 </table>
