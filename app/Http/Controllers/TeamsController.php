@@ -74,7 +74,18 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "正式修改球隊" . $id . "的資料";
+        // 先調出 $id 的 Player Model物件
+        $team = Team::findOrFail($id);
+        // 修改(資料來自於表單)
+        $team->name = $request->input('name');
+        $team->zone = $request->input('zone');
+        $team->city = $request->input('city');
+        $team->home = $request->input('home');
+
+        // 正是儲存至 DBMS (Database Management System = MySQL)
+        $team->save();
+
+        return redirect('teams'); // 觸發 /teams 路由(用 get 方法)
     }
 
     /**

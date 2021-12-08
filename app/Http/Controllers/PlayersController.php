@@ -82,8 +82,22 @@ class PlayersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        return "正式修改球員" . $id . "的資料";
+        // 先調出 $id 的 Player Model物件
+        $player = Player::findOrFail($id);
+        // 修改(資料來自於表單)
+        $player->name = $request->input('name');
+        $player->tid = $request->input('tid');
+        $player->position = $request->input('position');
+        $player->birthdate = $request->input('birthdate');
+        $player->onboarddate = $request->input('onboarddate');
+        $player->height = $request->input('height');
+        $player->weight = $request->input('weight');
+        $player->year = $request->input('year');
+        $player->nationality = $request->input('nationality');
+        // 正是儲存至 DBMS (Database Management System = MySQL)
+        $player->save();
+
+        return redirect('players'); // 觸發 /players 路由(用 get 方法)
     }
 
     /**
