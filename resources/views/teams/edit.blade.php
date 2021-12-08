@@ -15,19 +15,19 @@
         </tr>
         <tr>
             <td>名稱</td>
-            <td><input type="text" value="{{ $team->name }}"/></td>
+            <td><input type="text" name="name" value="{{ $team->name }}"/></td>
         </tr>
         <tr>
             <td>所屬分區</td>
-            <td><input type="text" value="{{ $team->zone }}"/></td>
+            <td><input type="text" name="zone" value="{{ $team->zone }}"/></td>
         </tr>
         <tr>
             <td>所在城市</td>
-            <td><input type="text" value="{{ $team->city }}"/></td>
+            <td><input type="text" name="city" value="{{ $team->city }}"/></td>
         </tr>
         <tr>
             <td>主場</td>
-            <td><input type="text" value="{{ $team->home    }}"/></td>
+            <td><input type="text" name="home" value="{{ $team->home }}"/></td>
         </tr>
     </table>
     <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>
