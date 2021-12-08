@@ -48,8 +48,10 @@ class TeamsController extends Controller
     public function show($id)
     {
         //
-        return "顯示單一筆球隊的紀錄(id = " . $id . ")";
 
+        // Team Model 管理 teams 資料表格
+        $team = Team::findOrFail($id);
+        return view('teams.show')->with(['team'=>$team]);
     }
 
     /**
