@@ -47,8 +47,6 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
-        //
-
         // Team Model 管理 teams 資料表格
         $team = Team::findOrFail($id);
         return view('teams.show')->with(['team'=>$team]);
@@ -62,7 +60,9 @@ class TeamsController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Team Model 管理 teams 資料表格
+        $team = Team::findOrFail($id);
+        return view('teams.edit')->with(['team'=>$team]);
     }
 
     /**
@@ -74,7 +74,7 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        return "正式修改球隊" . $id . "的資料";
     }
 
     /**

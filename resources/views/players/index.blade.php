@@ -10,7 +10,8 @@
         <th>編號</th>
         <th>姓名</th>
         <th>球隊編號</th>
-        <th>操作</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($players as $player)
         <tr>
@@ -20,6 +21,11 @@
             <td>
                 <a href="players/{{ $player->id }}">
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href="players/{{ $player->id }}/edit">
+                    修改
                 </a>
             </td>
         </tr>

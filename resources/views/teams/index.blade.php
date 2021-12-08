@@ -9,7 +9,8 @@
     <tr>
         <th>編號</th>
         <th>名稱</th>
-        <th>操作</th>
+        <th>操作1</th>
+        <th>操作2</th>
     </tr>
     @foreach($teams as $team)
         <tr>
@@ -18,6 +19,11 @@
             <td>
                 <a href="teams/{{ $team->id }}">
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href="teams/{{ $team->id }}/edit">
+                    修改
                 </a>
             </td>
         </tr>

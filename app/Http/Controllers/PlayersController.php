@@ -66,8 +66,10 @@ class PlayersController extends Controller
      */
     public function edit($id)
     {
-        //
-        return "顯示單一筆球員的編輯表單(id = " . $id . ")";
+        // Player Model 管理 players 資料表格
+        $player = Player::findOrFail($id);
+        return view('players.edit')->with(['player'=>$player]);
+
 
     }
 
@@ -81,6 +83,7 @@ class PlayersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        return "正式修改球員" . $id . "的資料";
     }
 
     /**
