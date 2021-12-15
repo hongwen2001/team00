@@ -43,8 +43,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/api.php'));
 
-            Route::pattern('player', '[0-9]+');
-            Route::pattern('team', '[0-9]+');
+            Route::pattern('players', '[0-9]+');
+            Route::pattern('teams', '[0-9]+');
 
             Route::middleware('web')
                 ->namespace($this->namespace)
