@@ -12,6 +12,7 @@
         <th>球隊編號</th>
         <th>操作1</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($players as $player)
         <tr>
@@ -27,6 +28,13 @@
                 <a href="players/{{ $player->id }}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method="post" action="players/{{ $player->id }}">
+                    @csrf <!-- CSRF = Cross-Site Request Forgery-->
+                    @method("delete")
+                    <input type="submit" value="刪除"/>
+                </form>
             </td>
         </tr>
     @endforeach

@@ -11,6 +11,7 @@
         <th>名稱</th>
         <th>操作1</th>
         <th>操作2</th>
+        <th>操作3</th>
     </tr>
     @foreach($teams as $team)
         <tr>
@@ -25,6 +26,13 @@
                 <a href="teams/{{ $team->id }}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method="post" action="teams/{{ $team->id }}">
+                @csrf <!-- CSRF = Cross-Site Request Forgery-->
+                    @method("delete")
+                    <input type="submit" value="刪除"/>
+                </form>
             </td>
         </tr>
     @endforeach

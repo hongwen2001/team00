@@ -108,6 +108,8 @@ class PlayersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $player = Player::findOrFail($id);
+        $player->delete();
+        return redirect('players'); // 觸發 /players 路由(用 get 方法)
     }
 }
