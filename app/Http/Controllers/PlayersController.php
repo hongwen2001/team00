@@ -27,7 +27,7 @@ class PlayersController extends Controller
     public function create()
     {
         //
-        return "產生新增球員的表單";
+        return view('players.create');
 
     }
 
@@ -39,8 +39,30 @@ class PlayersController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        return "在資料庫表格新增一筆球員的紀錄";
+        $name = $request->input('name');
+        $tid = $request->input('tid');
+        $position = $request->input('position');
+        $birthdate = $request->input('birthdate');
+        $onboarddate = $request->input('onboarddate');
+        $height = $request->input('height');
+        $weight = $request->input('weight');
+        $year = $request->input('year');
+        $nationality = $request->input('nationality');
+
+        Player::create(
+            [
+                'name' => $name,
+                'tid' => $tid,
+                'position' => $position,
+                'birthdate' => $birthdate,
+                'onboarddate' => $onboarddate,
+                'height' => $height,
+                'weight' => $weight,
+                'year' => $year,
+                'nationality' => $nationality
+            ]
+        );
+        return redirect('players'); // 觸發 /players 路由(用 get 方法)
 
     }
 

@@ -26,6 +26,7 @@ class TeamsController extends Controller
     public function create()
     {
         //
+        return view('teams.create');
     }
 
     /**
@@ -37,6 +38,22 @@ class TeamsController extends Controller
     public function store(Request $request)
     {
         //
+        $name = $request->input('name');
+        $zone = $request->input('zone');
+        $city = $request->input('city');
+        $home = $request->input('home');
+
+        // 正是儲存至 DBMS (Database Management System = MySQL)
+        Team::create(
+          [
+              'name' => $name,
+              'zone' => $zone,
+              'city' => $city,
+              'home' => $home
+          ]
+        );
+
+        return redirect('teams'); // 觸發 /teams 路由(用 get 方法)
     }
 
     /**
