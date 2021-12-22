@@ -24,16 +24,8 @@
             <td>{{ $team->id }}</td>
             <td>{{ $team->name }}</td>
             <td>{{ $team->zone }}</td>
-            <td>
-                <a href="teams/{{ $team->id }}">
-                    詳細
-                </a>
-            </td>
-            <td>
-                <a href="teams/{{ $team->id }}/edit">
-                    修改
-                </a>
-            </td>
+            <td><a href="{{ route('teams.show', ['team' => $team->id]) }}">顯示</a></td>
+            <td><a href="{{ route('teams.edit', ['team' => $team->id]) }}">修改</a></td>
             <td>
                 <form method="post" action="teams/{{ $team->id }}">
                 @csrf <!-- CSRF = Cross-Site Request Forgery-->
