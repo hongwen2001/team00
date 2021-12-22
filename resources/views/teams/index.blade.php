@@ -5,8 +5,8 @@
 </head>
 <body>
 <h1>顯示所有球隊資料 </h1>
-<a href="players">所有球員</a>
-<a href="teams/create">新增球隊</a>
+<a href="{{ route('players.index') }}">所有球員</a>
+<a href="{{ route('teams.create') }}">新增球隊</a>
 <table border="1">
     <tr>
         <th>編號</th>

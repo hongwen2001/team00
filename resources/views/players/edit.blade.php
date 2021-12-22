@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>顯示單一球員的編輯表單</h1>
-<a href="/players">所有球員</a>
+<a href="{{ route('players.index') }}">所有球員</a>
 <form method="post" action="/players/{{ $player->id}}">
     @csrf
     @method('put')

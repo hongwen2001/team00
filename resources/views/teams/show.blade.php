@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>顯示單一球隊的詳細資料 </h1>
-<a href="/teams">所有球隊</a>
+<a href="{{ route('teams.index') }}">所有球隊</a>
 <table border="1">
     <tr>
         <td>編號</td>
