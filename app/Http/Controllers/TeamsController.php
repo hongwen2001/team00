@@ -15,8 +15,9 @@ class TeamsController extends Controller
     public function index()
     {
         //
-        $teams = Team::all();
-        return view('teams.index')->with(['teams'=>$teams]);    }
+        $teams = Team::all()->sortBy('zone');
+        return view('teams.index')->with(['teams'=>$teams]);
+    }
 
     /**
      * Show the form for creating a new resource.

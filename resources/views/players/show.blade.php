@@ -16,8 +16,8 @@
         <td>{{ $player->name }}</td>
     </tr>
     <tr>
-        <td>球隊編號</td>
-        <td>{{ $player->tid }}</td>
+        <td>球隊</td>
+        <td>{{ $player->team->name }}</td>
     </tr>
     <tr>
         <td>生日</td>

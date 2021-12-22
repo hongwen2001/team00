@@ -14,7 +14,7 @@ class PlayersController extends Controller
      */
     public function index()
     {
-        $players = Player::all();
+        $players = Player::all()->sortByDesc('tid');
         return view('players.index')->with(['players'=>$players]);
 
     }

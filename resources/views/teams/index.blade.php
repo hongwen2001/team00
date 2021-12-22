@@ -11,6 +11,7 @@
     <tr>
         <th>編號</th>
         <th>名稱</th>
+        <th>分區</th>
         <th>操作1</th>
         <th>操作2</th>
         <th>操作3</th>
@@ -19,6 +20,7 @@
         <tr>
             <td>{{ $team->id }}</td>
             <td>{{ $team->name }}</td>
+            <td>{{ $team->zone }}</td>
             <td>
                 <a href="teams/{{ $team->id }}">
                     詳細
