@@ -19,4 +19,9 @@ class Player extends Model
         'year',
         'nationality'
     ];
+
+    public function team()
+    {
+        return $this->belongsTo('App\Models\Team', 'tid', 'id');
+    }
 }

@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示單一球隊的編輯表單</h1>
+<a href="/teams">所有球隊</a>
 <form method="post" action="/teams/{{ $team->id }}">
 @csrf <!-- CSRF = Cross-Site Request Forgery-->
     @method("put")

@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示單一球員的詳細資料 </h1>
+<a href="/players">所有球員</a>
 <table border="1">
     <tr>
         <td>編號</td>

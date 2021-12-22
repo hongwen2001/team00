@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示球隊的新增表單</h1>
+<a href="/teams">所有球隊</a>
 <form method="post" action="/teams">
 @csrf <!-- CSRF = Cross-Site Request Forgery-->
     <table border="1">
