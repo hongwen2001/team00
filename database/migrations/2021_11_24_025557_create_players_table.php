@@ -25,6 +25,7 @@ class CreatePlayersTable extends Migration
             $table->tinyInteger('year')->unsigned()->comment('年資');
             $table->string('nationality')->comment('國籍');
             $table->timestamps();
+            $table->foreign('tid')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 
