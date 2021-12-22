@@ -20,4 +20,10 @@ class Team extends Model
     {
         return $this->hasMany('App\Models\Player', 'tid');
     }
+
+    public function scopeZone($query, $zone)
+    {
+        $query->where('zone', '=', $zone);
+    }
+
 }

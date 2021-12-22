@@ -24,4 +24,10 @@ class Player extends Model
     {
         return $this->belongsTo('App\Models\Team', 'tid', 'id');
     }
+
+    public function scopeSenior($query)
+    {
+        $query->where('year', '>', 10)
+            ->orderBy('year');
+    }
 }

@@ -134,4 +134,11 @@ class PlayersController extends Controller
         $player->delete();
         return redirect('players'); // 觸發 /players 路由(用 get 方法)
     }
+
+
+    public function senior()
+    {
+        $players = Player::senior()->get();
+        return view('players.index', ['players' => $players]);
+    }
 }

@@ -5,8 +5,10 @@
 </head>
 <body>
 <h1>顯示所有球員資料 </h1>
-<a href="{{ route('teams.index') }}">所有球隊</a>
+<a href="{{ route('teams.index') }}">所有球隊</a><br/>
 <a href="{{ route('players.create') }}">新增球員</a>
+<a href="{{ route('players.index') }}">所有球員</a>
+<a href="{{ route('players.senior') }}">資深球員</a>
 <table border="1">
     <tr>
         <th>編號</th>

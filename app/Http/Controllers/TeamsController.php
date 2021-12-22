@@ -118,4 +118,17 @@ class TeamsController extends Controller
         $team->delete();
         return redirect('teams');
     }
+
+
+    public function western()
+    {
+        $teams = Team::zone('西區')->get();
+        return view('teams.index', ['teams'=>$teams]);
+    }
+
+    public function eastern()
+    {
+        $teams = Team::zone('東區')->get();
+        return view('teams.index', ['teams'=>$teams]);
+    }
 }
