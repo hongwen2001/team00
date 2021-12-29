@@ -15,7 +15,13 @@
         </tr>
         <tr>
             <td>球隊編號</td>
-            <td><input type="text" name="tid"/></td>
+            <td>
+                <select name="tid" required>
+                    @foreach ($teams as $team)
+                        <option value="{{ $team->id }}">{{ $team->name }}</option>
+                    @endforeach
+                </select>
+            </td>
         </tr>
         <tr>
             <td>生日</td>

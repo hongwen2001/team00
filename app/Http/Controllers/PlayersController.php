@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Player;
+use App\Models\Team;
 use Illuminate\Http\Request;
 
 class PlayersController extends Controller
@@ -27,8 +28,8 @@ class PlayersController extends Controller
     public function create()
     {
         //
-        return view('players.create');
-
+        $teams = Team::all()->sortBy('id');
+        return view('players.create')->with(['teams'=>$teams]);
     }
 
     /**
@@ -90,7 +91,8 @@ class PlayersController extends Controller
     {
         // Player Model 管理 players 資料表格
         $player = Player::findOrFail($id);
-        return view('players.edit')->with(['player'=>$player]);
+        $teams = Team::all()->sortBy('id');
+        return view('players.edit')->with(['player'=>$player, 'teams'=>$teams]);
 
 
     }

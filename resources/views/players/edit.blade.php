@@ -20,8 +20,17 @@
         </tr>
         <tr>
             <td>球隊編號</td>
-            <td><input type="text" name="tid" value="{{ $player->tid }}"/></td>
-        </tr>
+            <td>
+                <select name="tid" required>
+                    @foreach ($teams as $team)
+                        @if ($team->id == $player->tid)
+                            <option value="{{ $team->id }}" selected>{{ $team->name }}</option>
+                        @else
+                            <option value="{{ $team->id }}">{{ $team->name }}</option>
+                        @endif
+                    @endforeach
+                </select>
+            </td>        </tr>
         <tr>
             <td>生日</td>
             <td>
