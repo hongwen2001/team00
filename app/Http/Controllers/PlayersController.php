@@ -29,7 +29,8 @@ class PlayersController extends Controller
     {
         //
         $teams = Team::all()->sortBy('id');
-        return view('players.create')->with(['teams'=>$teams]);
+        $positions = Player::allPositions()->get();
+        return view('players.create')->with(['teams'=>$teams, 'positions'=>$positions]);
     }
 
     /**
@@ -92,7 +93,8 @@ class PlayersController extends Controller
         // Player Model 管理 players 資料表格
         $player = Player::findOrFail($id);
         $teams = Team::all()->sortBy('id');
-        return view('players.edit')->with(['player'=>$player, 'teams'=>$teams]);
+        $positions = Player::allPositions()->get();
+        return view('players.edit')->with(['player'=>$player, 'teams'=>$teams, 'positions'=>$positions]);
 
 
     }

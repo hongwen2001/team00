@@ -30,4 +30,9 @@ class Player extends Model
         $query->where('year', '>', 10)
             ->orderBy('year');
     }
+
+    public function scopeAllPositions($query)
+    {
+        $query->select('position')->groupBy('position');
+    }
 }

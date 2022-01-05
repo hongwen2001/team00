@@ -46,42 +46,14 @@
         <tr>
             <td>位置</td>
             <td>
-                <select name="position" required>
-                    @if($player->position=="控球後衛")
-                        <option value="控球後衛" selected>控球後衛</option>
-                    @else
-                        <option value="控球後衛">控球後衛</option>
-                    @endif
-                    @if($player->position=="得分後衛")
-                        <option value="得分後衛" selected>得分後衛</option>
-                    @else
-                        <option value="得分後衛">得分後衛</option>
-                    @endif
-                    @if($player->position=="後衛")
-                        <option value="後衛" selected>後衛</option>
-                    @else
-                        <option value="後衛">後衛</option>
-                    @endif
-                    @if($player->position=="前鋒")
-                        <option value="前鋒" selected>前鋒</option>
-                    @else
-                        <option value="前鋒">前鋒</option>
-                    @endif
-                    @if($player->position=="小前鋒")
-                        <option value="小前鋒" selected>小前鋒</option>
-                    @else
-                        <option value="小前鋒">小前鋒</option>
-                    @endif
-                    @if($player->position=="大前鋒")
-                        <option value="大前鋒" selected>大前鋒</option>
-                    @else
-                        <option value="大前鋒">大前鋒</option>
-                    @endif
-                    @if($player->position=="中鋒")
-                        <option value="中鋒" selected>中鋒</option>
-                    @else
-                        <option value="中鋒">中鋒</option>
-                    @endif
+            <select name="position" required>
+                    @foreach($positions as $position)
+                        @if($player->position==$position->position)
+                            <option value="{{$position->position}}" selected>{{$position->position}}</option>
+                        @else
+                            <option value="{{$position->position}}">{{$position->position}}</option>
+                        @endif
+                    @endforeach
                 </select>
             </td>
         </tr>

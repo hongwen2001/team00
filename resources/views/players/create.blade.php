@@ -39,13 +39,9 @@
             <td>位置</td>
             <td>
                 <select name="position" required>
-                    <option value="控球後衛">控球後衛</option>
-                    <option value="得分後衛">得分後衛</option>
-                    <option value="後衛" selected>後衛</option>
-                    <option value="前鋒">前鋒</option>
-                    <option value="小前鋒">小前鋒</option>
-                    <option value="大前鋒">大前鋒</option>
-                    <option value="中鋒">中鋒</option>
+                    @foreach($positions as $position)
+                        <option value="{{$position->position}}">{{$position->position}}</option>
+                    @endforeach
                 </select>
                 <!--
                 <input type="radio" name="position" value="控球後衛"/>
