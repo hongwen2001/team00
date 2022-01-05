@@ -1,6 +1,8 @@
 @extends('app')
 
-@section('title', '新增一筆球隊資料')
+@section('title', '建立球隊表單')
+
+@section('nba_theme', '建立球隊的表單')
 
 @section('nba_contents')
     <h1>顯示球隊的新增表單</h1>

@@ -1,9 +1,10 @@
 @extends('app')
 
-@section('title', '新增一筆球員資料')
+@section('title', '建立球員表單')
+
+@section('nba_theme', '建立球員的表單')
 
 @section('nba_contents')
-    <h1>新增球員</h1>
     <form method="post" action="/players">
         @csrf
         <table border="1">

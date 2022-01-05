@@ -1,6 +1,8 @@
 @extends('app')
 
-@section('title', '顯示單一球員資料')
+@section('title', '顯示特定球員')
+
+@section('nba_theme', '您所選取的球員資料')
 
 @section('nba_contents')
 <h1>顯示單一球員的詳細資料 </h1>

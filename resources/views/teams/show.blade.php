@@ -1,6 +1,8 @@
 @extends('app')
 
-@section('title', '顯示單一球隊資料')
+@section('title', '顯示特定球隊')
+
+@section('nba_theme', '您所選取的球隊資料')
 
 @section('nba_contents')
     <h1>顯示單一球隊的詳細資料 </h1>
