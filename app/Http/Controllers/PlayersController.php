@@ -141,4 +141,59 @@ class PlayersController extends Controller
         $players = Player::senior()->get();
         return view('players.index', ['players' => $players]);
     }
+
+
+    public function api_players()
+    {
+        return Player::all();
+    }
+
+
+    public function api_update(Request $request)
+    {
+        $player = Player::find($request->input('id'));
+        if ($player == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+        $player->name = $request->input('name');
+        $player->tid = $request->input('tid');
+        $player->position = $request->input('position');
+        $player->height = $request->input('height');
+        $player->weight = $request->input('weight');
+        $player->year = $request->input('year');
+        $player->nationality = $request->input('nationality');
+
+        if ($player->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $player = Player::find($request->input('id'));
+
+        if ($player == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($player->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+    }
 }
