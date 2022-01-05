@@ -1,9 +1,8 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一球員的詳細資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '顯示單一球員資料')
+
+@section('nba_contents')
 <h1>顯示單一球員的詳細資料 </h1>
 <a href="{{ route('players.index') }}">所有球員</a>
 <table border="1">
@@ -49,5 +48,4 @@
         <td>{{ $player->nationality }}</td>
     </tr>
 </table>
-</body>
-</html>
+@endsection
